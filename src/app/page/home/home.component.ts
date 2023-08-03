@@ -8,6 +8,8 @@ import { ApiService } from 'src/app/services/api.service';
 })
 export class HomeComponent {
   public people_arr: any;
+  public page: number = 0;
+  public search: string = '';
 
   constructor(private _apiServices: ApiService) {
     this.getAllPeople();
@@ -18,5 +20,20 @@ export class HomeComponent {
       console.log(response);
       this.people_arr = response.results;
     });
+  }
+
+  nextPage() {
+    this.page += 5;
+  }
+
+  prevPage() {
+    if (this.page > 0) {
+      this.page -= 5;
+    }
+  }
+
+  onSearch(search: string) {
+    this.page = 0;
+    this.search = search;
   }
 }
