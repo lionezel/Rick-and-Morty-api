@@ -1,4 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 body {
   margin: 70px;
+  background: url(./assets/rick-and-morty-in-another-planet_3840x2160_xtrafondos.com.jpg)
+    no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+  height: auto;
 }

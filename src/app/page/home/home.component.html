@@ -1,36 +1,26 @@
-<button class="btn btn-primary" (click)="prevPage()">Atras</button>
+<app-navbar></app-navbar>
 
 <input
   type="text"
-  class="form-control mb-2"
-  placeholder=""
-  #txtSearch
-  (keyup)="onSearch(txtSearch.value)"
-/>
-
-<button class="btn btn-primary" (click)="nextPage()">Siguente</button>
-
-<div
+  placeholder="Buscar...."
   style="
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 20px;
-    margin: 20px;
+    position: absolute;
+    bottom: 50%;
+    width: 35%;
+    height: 60px;
+    left: 25%;
+    border-radius: 100px 0px 0px 100px;
+  "
+/>
+<button
+  style="
+    position: absolute;
+    width: 10%;
+    height: 60px;
+    bottom: 50%;
+    left: 60%;
+    border-radius: 0px 50px 50px 0px;
   "
 >
-  <div
-    class="container"
-    *ngFor="let item of people_arr | filtro : page : search"
-  >
-    <div class="card" style="width: 100%; height: 20rem">
-      <img [src]="item.image" class="card-img-top" alt="..." />
-      <div class="card-body">
-        <h5 class="card-title" style="text-align: center">{{ item.name }}</h5>
-        <h5 class="card-title" style="text-align: left; font-weight: normal">
-          {{ item.gender }}
-        </h5>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-  </div>
-</div>
+  Buscar
+</button>
